@@ -19,7 +19,7 @@ llm = ChatGoogleGenerativeAI(
 # simple in-memory chat history (resets every deployment)
 chat_history = []
 
-@app.route("/chat", methods=["POST"])
+@app.route("/", methods=["POST"])
 def chat():
     data = request.get_json()
     user_input = data.get("message", "")
@@ -46,11 +46,6 @@ def chat():
     return jsonify({"reply": response.content})
 
 
-# Required by Vercel (serverless handler)
-def handler(event, context):
-    return app(event, context)
 
 
-# For local development only
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+
