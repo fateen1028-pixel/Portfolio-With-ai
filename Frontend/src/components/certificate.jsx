@@ -1,4 +1,4 @@
-import {BarChart, Brain, Code, Cpu, Database, Sparkles} from "lucide-react";
+import { BarChart, Brain, Code, Cpu, Database, Sparkles, Cloud, Layers } from "lucide-react";
 import React from "react";
 
 const CertificationsPage = () => {
@@ -20,6 +20,30 @@ const CertificationsPage = () => {
             link: "https://udemy.com"
         },
         {
+            title: "LangChain & RAG Fundamentals",
+            issuer: "Hugging Face / OpenAI Tutorials",
+            date: "2025",
+            color: "orange",
+            icon: <Sparkles className="text-orange-600" size={28} />,
+            link: "#"
+        },
+        {
+            title: "Full Stack AI App with Flask & React",
+            issuer: "YouTube / FreeCodeCamp / Personal Project",
+            date: "2025",
+            color: "blue",
+            icon: <Code className="text-blue-600" size={28} />,
+            link: "#"
+        },
+        {
+            title: "Cloud & Deployment (AWS / Azure)",
+            issuer: "AWS / Microsoft Learn",
+            date: "2025",
+            color: "cyan",
+            icon: <Cloud className="text-cyan-600" size={28} />,
+            link: "#"
+        },
+        {
             title: "Data Science & Visualization",
             issuer: "Google / Coursera",
             date: "2024",
@@ -28,27 +52,27 @@ const CertificationsPage = () => {
             link: "https://coursera.org"
         },
         {
-            title: "Apache Spark & Big Data Analytics",
-            issuer: "DataCamp",
+            title: "AI Integration with Gemini & APIs",
+            issuer: "Google AI Studio / Personal Projects",
+            date: "2025",
+            color: "pink",
+            icon: <Layers className="text-pink-600" size={28} />,
+            link: "#"
+        },
+        {
+            title: "DevOps & CI/CD Fundamentals",
+            issuer: "FreeCodeCamp / Coursera",
+            date: "2025",
+            color: "green",
+            icon: <Database className="text-green-600" size={28} />,
+            link: "#"
+        },
+        {
+            title: "Streamlit & App Prototyping",
+            issuer: "Streamlit Academy / YouTube Learn",
             date: "2024",
-            color: "cyan",
-            icon: <Database className="text-cyan-600" size={28} />,
-            link: "https://datacamp.com"
-        },
-        {
-            title: "Frontend Development with React",
-            issuer: "Meta / Coursera",
-            date: "2025",
-            color: "blue",
-            icon: <Code className="text-blue-600" size={28} />,
-            link: "https://coursera.org"
-        },
-        {
-            title: "Generative AI & LangChain",
-            issuer: "Hugging Face / OpenAI Tutorials",
-            date: "2025",
-            color: "orange",
-            icon: <Sparkles className="text-orange-600" size={28} />,
+            color: "amber",
+            icon: <Sparkles className="text-amber-600" size={28} />,
             link: "#"
         }
     ];

@@ -1,18 +1,65 @@
-import {BarChart, Brain, Camera, Code, Cpu, Database, Sparkles, Terminal} from "lucide-react";
+import {BarChart, Brain, Camera, Code, Cpu, Database, Sparkles, Terminal,Cloud} from "lucide-react";
 import React from "react";
 
 const SkillsPage = () => {
     // Removed Flask and updated AI/Web skills
     const skills = [
-        { category: 'Programming & Scripting', icon: <Terminal className="text-blue-600" size={32} />, color: 'blue', items: ['Python', 'JavaScript', 'C', 'Git', 'Linux CLI'] },
-        { category: 'Machine Learning', icon: <Brain className="text-purple-600" size={32} />, color: 'purple', items: ['Scikit-learn', 'Linear & Logistic Regression', 'Decision Trees', 'Clustering & Classification', 'Model Evaluation & Metrics'] },
-        { category: 'Deep Learning & AI', icon: <Cpu className="text-indigo-600" size={32} />, color: 'indigo', items: ['PyTorch', 'Transformers', 'CNNs, RNNs, LSTMs', 'Attention Mechanisms', 'Model Fine-tuning'] },
-        { category: 'Computer Vision', icon: <Camera className="text-pink-600" size={32} />, color: 'pink', items: ['OpenCV', 'Image Processing', 'Object Detection', 'Feature Extraction', 'Real-time Vision Apps'] },
-        { category: 'Big Data & Data Engineering', icon: <Database className="text-cyan-600" size={32} />, color: 'cyan', items: ['Apache Spark', 'PySpark', 'Pandas', 'ETL Pipelines', 'Large Dataset Handling'] },
-        { category: 'Web Development', icon: <Code className="text-green-600" size={32} />, color: 'green', items: ['React + Vite', 'TailwindCSS', 'Frontend Design', 'JavaScript/TypeScript', 'SaaS Frontend Design'] },
-        { category: 'AI Integration & Tools', icon: <Sparkles className="text-orange-600" size={32} />, color: 'orange', items: ['LangChain', 'Hugging Face Ecosystem', 'LLM Apps', 'Prompt Engineering', 'Generative Models'] },
-        { category: 'Data Visualization', icon: <BarChart className="text-teal-600" size={32} />, color: 'teal', items: ['Matplotlib', 'Seaborn', 'Plotly', 'Interactive Dashboards', 'Data Storytelling'] }
-    ];
+    { 
+        category: 'Programming & Scripting', 
+        icon: <Terminal className="text-blue-600" size={32} />, 
+        color: 'blue', 
+        items: ['Python', 'JavaScript', 'C', 'Git', 'Linux CLI'] 
+    },
+    { 
+        category: 'Machine Learning', 
+        icon: <Brain className="text-purple-600" size={32} />, 
+        color: 'purple', 
+        items: ['Scikit-learn', 'Linear & Logistic Regression', 'Decision Trees', 'Clustering & Classification', 'Model Evaluation & Metrics'] 
+    },
+    { 
+        category: 'Deep Learning & AI', 
+        icon: <Cpu className="text-indigo-600" size={32} />, 
+        color: 'indigo', 
+        items: ['PyTorch', 'Transformers', 'CNNs, RNNs, LSTMs', 'Attention Mechanisms', 'Model Fine-tuning'] 
+    },
+    { 
+        category: 'Computer Vision', 
+        icon: <Camera className="text-pink-600" size={32} />, 
+        color: 'pink', 
+        items: ['OpenCV', 'Image Processing', 'Object Detection', 'Feature Extraction', 'Real-time Vision Apps'] 
+    },
+    { 
+        category: 'Big Data & Data Engineering', 
+        icon: <Database className="text-cyan-600" size={32} />, 
+        color: 'cyan', 
+        items: ['Apache Spark', 'PySpark', 'Pandas', 'ETL Pipelines', 'Large Dataset Handling'] 
+    },
+    { 
+        category: 'Web Development', 
+        icon: <Code className="text-green-600" size={32} />, 
+        color: 'green', 
+        items: ['React + Vite', 'TailwindCSS', 'Frontend Design', 'JavaScript/TypeScript', 'SaaS Frontend Design'] 
+    },
+    { 
+        category: 'AI Integration & Tools', 
+        icon: <Sparkles className="text-orange-600" size={32} />, 
+        color: 'orange', 
+        items: ['LangChain', 'RAG', 'Hugging Face Ecosystem', 'Prompt Engineering', 'Generative Models (Gemini, GPT)'] 
+    },
+    { 
+        category: 'Data Visualization', 
+        icon: <BarChart className="text-teal-600" size={32} />, 
+        color: 'teal', 
+        items: ['Matplotlib', 'Seaborn', 'Plotly', 'Interactive Dashboards', 'Data Storytelling'] 
+    },
+    { 
+        category: 'AI Deployment & Cloud DevOps', 
+        icon: <Cloud className="text-gray-600" size={32} />, 
+        color: 'gray', 
+        items: ['Flask / FastAPI', 'Streamlit', 'AWS / Azure', 'Docker Basics', 'Full Stack AI App Deployment'] 
+    }
+];
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-gray-50 pt-20">
             <div className="max-w-7xl mx-auto px-6 py-20">
