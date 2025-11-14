@@ -19,31 +19,34 @@ llm = ChatGoogleGenerativeAI(
 # simple in-memory chat history (resets every deployment)
 chat_history = []
 
-@app.route("/", methods=["POST"])
+@app.route("/", methods=["GET","POST"])
 def chat():
-    data = request.get_json()
-    user_input = data.get("message", "")
+    if request.method == "POST":
+        data = request.get_json()
+        user_input = data.get("message", "")
 
-    chat_history.append(HumanMessage(content=user_input))
+        chat_history.append(HumanMessage(content=user_input))
 
-    system_prompt = SystemMessage(
-        content=(
-            "You are a helpful AI coding assistant. "
-            "If someone asks you about the creator of this website, the creator is F. Mohamed Fateen. "
-            "Additional skills include: Python, JavaScript, C, Git, Linux CLI, Scikit-learn, Linear Regression, "
-            "Logistic Regression, Machine Learning, Deep Learning basics, LangChain, RAG, Fine-tuning, Pydantic, OpenCV, "
-            "React, Frontend Development, Responsive Design, Flask, Streamlit, FastAPI (concepts), Postman, WordPress, "
-            "Gamma AI, Manus AI, Anthropic, AWS, Azure, AI Deployment, DevOps, App Development, VR (Meta Quest), "
-            "Notion, Google Colab, Integration, Calculus."
+        system_prompt = SystemMessage(
+            content=(
+                "You are a helpful AI coding assistant. "
+                "If someone asks you about the creator of this website, the creator is F. Mohamed Fateen. "
+                "Additional skills include: Python, JavaScript, C, Git, Linux CLI, Scikit-learn, Linear Regression, "
+                "Logistic Regression, Machine Learning, Deep Learning basics, LangChain, RAG, Fine-tuning, Pydantic, OpenCV, "
+                "React, Frontend Development, Responsive Design, Flask, Streamlit, FastAPI (concepts), Postman, WordPress, "
+                "Gamma AI, Manus AI, Anthropic, AWS, Azure, AI Deployment, DevOps, App Development, VR (Meta Quest), "
+                "Notion, Google Colab, Integration, Calculus."
+            )
         )
-    )
 
-    # LLM response
-    response = llm.invoke([system_prompt] + chat_history)
+        # LLM response
+        response = llm.invoke([system_prompt] + chat_history)
 
-    chat_history.append(response)
+        chat_history.append(response)
 
-    return jsonify({"reply": response.content})
+        return jsonify({"reply": response.content})
+    else: # This handles the GET request from the browser
+        return "AI Chatbot API is running. Send a POST request to this endpoint."
 
 
 
