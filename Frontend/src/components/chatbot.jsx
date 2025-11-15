@@ -91,7 +91,7 @@ const ChatBot = () => {
             {messages.map((msg, i) => (
   <div
   key={i}
-  className={`max-w-[45%] w-auto p-3 rounded-2xl text-[15px] sm:text-base leading-relaxed break-words overflow-auto ${
+  className={`max-w-[55%] w-auto p-3 rounded-2xl text-[15px] sm:text-base leading-relaxed break-words overflow-auto ${
     msg.sender === "user"
       ? "bg-blue-600 text-white self-end ml-auto"
       : "bg-gray-200 text-gray-800 self-start"
